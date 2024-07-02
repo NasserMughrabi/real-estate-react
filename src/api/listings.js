@@ -16,7 +16,7 @@ const getAllListings = async () => {
 };
 
 // Function to delete a listing by ID
-const deleteListing = async (listingId) => {
+const deleteListingById = async (listingId) => {
   try {
     const response = await fetch(`${API_BASE_URL}/listings/${listingId}`, {
       method: 'DELETE'
@@ -31,4 +31,4 @@ const deleteListing = async (listingId) => {
   }
 };
 
-export { getAllListings, deleteListing };
+export { getAllListings, deleteListingById };

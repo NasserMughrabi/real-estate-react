@@ -2,27 +2,43 @@ import {
   BrowserRouter as Router,
   Routes,
   Route,
-  Navigate,
 } from "react-router-dom";
 import Home from "./pages/Home";
+import Profile from "./pages/Profile";
+import { ListingProvider } from "../src/context/listingContext";
+import Login from "./pages/Login";
+import { UserContextProvider } from "./context/userContext";
+import UserStatus from "./components/onboard/UserStatus";
+import ListingPage from "./pages/ListingPage";
 
 function App() {
   return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/home" element={<Home />} />
+    <ListingProvider>
+      <UserContextProvider>
+        <UserStatus />
+        <Router>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/home" element={<Home />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/users/:id" element={<Profile />} />
+            <Route
+              path="/users/:userId/listings/:listingId"
+              element={<ListingPage />}
+            />
 
-        {/* <Route
+            {/* <Route
             path="/welcome/:username"
             element={
               <AuthenticatedRoute>
-                <WelcomeComponent />
+              <WelcomeComponent />
               </AuthenticatedRoute>
-            }
-          /> */}
-      </Routes>
-    </Router>
+              }
+              /> */}
+          </Routes>
+        </Router>
+      </UserContextProvider>
+    </ListingProvider>
   );
 }
 
