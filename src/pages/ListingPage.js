@@ -20,7 +20,7 @@ const ListingPage = () => {
       }
     };
     getListing();
-  }, []);
+  }, [userId, listingId]);
 
   return (
     <Flex justifyContent={"center"}>

@@ -6,7 +6,7 @@ export const ListingProvider = ({ children }) => {
   const [allListings, setAllListings] = useState([]);
 
   return (
-    <ListingContext.Provider value={[allListings, setAllListings]}>
+    <ListingContext.Provider value={{allListings, setAllListings}}>
       {children}
     </ListingContext.Provider>
   );

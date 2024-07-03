@@ -3,7 +3,7 @@ import { Button, Box } from "@chakra-ui/react";
 import { UserContext } from "../../context/userContext";
 
 const Signout = () => {
-  const [user, setUser] = useContext(UserContext);
+  const { setUser } = useContext(UserContext);
 
   const handleSignout = () => {
     setUser("");

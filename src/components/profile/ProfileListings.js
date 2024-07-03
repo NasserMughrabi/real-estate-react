@@ -5,7 +5,7 @@ import { Flex } from "@chakra-ui/react";
 import Listing from "../listings/Listing";
 
 const ProfileListings = ({ profileUser }) => {
-  const [allListings, setAllListings] = useContext(ListingContext);
+  const { allListings, setAllListings } = useContext(ListingContext);
 
   useEffect(() => {
     // Fetch users when component mounts
@@ -18,7 +18,7 @@ const ProfileListings = ({ profileUser }) => {
       }
     };
     fetchListings();
-  }, []);
+  }, [setAllListings]);
 
   return (
     <Flex flexWrap="wrap" justify="center" pt={5}>

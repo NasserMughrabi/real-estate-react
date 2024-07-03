@@ -3,7 +3,7 @@ import { Box, Avatar, HStack, Link } from "@chakra-ui/react";
 import { UserContext } from "../../context/userContext";
 
 const User = () => {
-  const [user] = useContext(UserContext);
+  const {user} = useContext(UserContext);
 
   return (
     <Box position={"absolute"} left={10} top={3}>

@@ -31,8 +31,8 @@ import { useNavigate } from "react-router-dom";
 
 const ListingModal = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
-  const [allListings, setAllListings] = useContext(ListingContext);
-  const [user] = useContext(UserContext);
+  const { setAllListings } = useContext(ListingContext);
+  const {user} = useContext(UserContext);
   const navigate = useNavigate();
 
   //   const initialRef = useRef(null);

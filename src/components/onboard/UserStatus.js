@@ -5,7 +5,7 @@ import Signout from "./Signout";
 import User from "./User";
 
 const UserStatus = () => {
-  const [user] = useContext(UserContext);
+  const {user} = useContext(UserContext);
 
   return (
     <>

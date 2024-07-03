@@ -37,8 +37,8 @@ const listingsImages = [
 ];
 
 const Listing = ({ listing }) => {
-  const [allListings, setAllListings] = useContext(ListingContext);
-  const [user] = useContext(UserContext);
+  const { setAllListings } = useContext(ListingContext);
+  const { user } = useContext(UserContext);
 
   const deleteListing = async (id) => {
     try {

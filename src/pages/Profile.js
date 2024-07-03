@@ -20,7 +20,7 @@ const Profile = () => {
       }
     };
     getUser();
-  }, []);
+  }, [id]);
 
   return (
     <Box>

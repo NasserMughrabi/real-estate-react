@@ -5,7 +5,7 @@ import { getAllListings } from "../../api/listings";
 import { ListingContext } from "../../context/listingContext";
 
 const Listings = () => {
-  const [allListings, setAllListings] = useContext(ListingContext);
+  const { allListings, setAllListings } = useContext(ListingContext);
 
   useEffect(() => {
     // Fetch users when component mounts
@@ -18,7 +18,7 @@ const Listings = () => {
       }
     };
     fetchListings();
-  }, []);
+  }, [setAllListings]);
 
   return (
     <Flex flexWrap="wrap" justify="center">

@@ -19,8 +19,8 @@ const Signin = () => {
   const toast = useToast();
   const navigate = useNavigate();
   const [username, setUsername] = useState("");
-  const [allUsers, setAllUsers] = useState("");
-  const [user, setUser] = useContext(UserContext);
+  const { setAllUsers } = useState("");
+  const {user, setUser} = useContext(UserContext);
 
   const handleSignin = async () => {
     if (username === "") {
