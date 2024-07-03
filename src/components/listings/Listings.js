@@ -1,6 +1,5 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useEffect, useContext } from "react";
 import Listing from "./Listing";
-// import { listings } from "../utils/data";
 import { Flex } from "@chakra-ui/react";
 import { getAllListings } from "../../api/listings";
 import { ListingContext } from "../../context/listingContext";

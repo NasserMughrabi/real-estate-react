@@ -72,7 +72,7 @@ const ListingModal = () => {
     }
 
     try {
-      await createListingForUser(1001, listingData);
+      await createListingForUser(user.id, listingData);
       const updatedListings = await getAllListings();
       setAllListings(updatedListings);
       onClose();
