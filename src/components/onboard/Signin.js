@@ -19,7 +19,6 @@ const Signin = () => {
   const toast = useToast();
   const navigate = useNavigate();
   const [username, setUsername] = useState("");
-  const { setAllUsers } = useState("");
   const {user, setUser} = useContext(UserContext);
 
   const handleSignin = async () => {
@@ -54,7 +53,6 @@ const Signin = () => {
     // if user exists, log them in, otherwise create new user
     try {
       const fetchedUsers = await getAllUsers();
-      setAllUsers(fetchedUsers);
 
       const userExists = fetchedUsers.find(
         (user) => user.username === username
