@@ -21,9 +21,6 @@ jobs:
     - name: Check Docker version
       run: docker --version
 
-    - name: Start Docker
-      run: sudo systemctl start docker
-
     - name: Set up Docker Buildx
       uses: docker/setup-buildx-action@v2
 
