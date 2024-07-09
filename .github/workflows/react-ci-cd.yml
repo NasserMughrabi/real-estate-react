@@ -21,6 +21,10 @@ jobs:
     - name: Check Docker version
       run: docker --version
 
+    - name: Check Docker version
+      run: open --background -a Docker
+
+
     - name: Set up Docker Buildx
       uses: docker/setup-buildx-action@v2
 
