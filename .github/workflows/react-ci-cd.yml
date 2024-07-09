@@ -24,7 +24,7 @@ jobs:
 
     - name: Build and push Docker image for Web
       run: |
-        docker build -t ${{ secrets.DOCKER_USERNAME }}/real-estate-react:latest -f ./web/Dockerfile ./web
+        docker build -t ${{ secrets.DOCKER_USERNAME }}/real-estate-react:latest -f ./Dockerfile .
         docker push ${{ secrets.DOCKER_USERNAME }}/real-estate-react:latest
 
     - name: Deploy Web to EC2
