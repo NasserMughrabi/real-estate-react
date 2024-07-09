@@ -13,6 +13,12 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v2
 
+    - name: Install Docker
+      run: |
+        brew install docker
+        brew install docker-machine-driver-hyperkit
+        docker --version
+
     - name: Check Docker version
       run: docker version
 
