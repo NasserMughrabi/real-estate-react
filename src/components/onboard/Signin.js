@@ -68,7 +68,7 @@ const Signin = () => {
         // create new user
         try {
           const newUser = await createUser(userData);
-          localStorage.setItem("userToken", user?.username + " " + user?.id);
+          localStorage.setItem("userToken", newUser?.username + " " + newUser?.id);
           setUser(newUser);
           navigate("/home");
         } catch (error) {
