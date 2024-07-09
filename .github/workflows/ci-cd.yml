@@ -40,5 +40,5 @@ jobs:
         ssh -i ec2_key.pem -o StrictHostKeyChecking=no ${{ secrets.EC2_USER }}@${{ secrets.EC2_IP }} << 'EOF'
           docker pull ${{ secrets.DOCKER_USERNAME }}/real-estate-react:latest
           docker pull ${{ secrets.DOCKER_USERNAME }}/real-estate-api:latest
-          docker-compose -f /path/to/your/docker-compose.yml up -d --no-build
+          docker-compose -f /home/ec2-user/realestate-fullstack/docker-compose.yml up -d --no-build
         EOF
