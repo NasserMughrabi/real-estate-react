@@ -21,7 +21,7 @@ jobs:
     - name: Check Docker version
       run: docker --version
 
-    - name: Check Docker version
+    - name: Open Docker
       run: open --background -a Docker
 
 
