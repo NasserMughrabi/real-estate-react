@@ -2,7 +2,7 @@
 # docker run -d -p 80:80 --name realestate-react realestate-react
 
 # Use an official Node runtime as a parent image
-FROM node:14-alpine
+FROM node:16-alpine
 
 # Set the working directory in the container
 WORKDIR /app
