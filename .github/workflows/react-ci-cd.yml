@@ -19,7 +19,7 @@ jobs:
         brew install docker-machine-driver-vultr
 
     - name: Check Docker version
-      run: docker --version; sleep 5;
+      run: docker --version
 
     - name: Check Docker version
       run: open --background -a Docker
