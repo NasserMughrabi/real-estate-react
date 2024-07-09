@@ -54,7 +54,7 @@ const Listing = ({ listing }) => {
     <Card maxW="sm" m={4}>
       <CardBody>
         <Flex justifyContent={"space-between"}>
-          <Link href={`http://localhost:3000/users/${listing?.user.id}`}>
+          <Link href={`${process.env.REACT_APP_API_URL}:3000/users/${listing?.user.id}`}>
             <HStack py={2} alignItems={"center"}>
               <Avatar size={"sm"} name={listing?.user.username} />
               <Box fontWeight={"bold"}>{listing?.user.username}</Box>
@@ -82,7 +82,7 @@ const Listing = ({ listing }) => {
             </Text>
             <Link
               _hover={{ textDecoration: "none" }}
-              href={`http://localhost:3000/users/${listing?.user.id}/listings/${listing?.id}`}
+              href={`${process.env.REACT_APP_API_URL}:3000/users/${listing?.user.id}/listings/${listing?.id}`}
             >
               <Button variant="solid" colorScheme="blue">
                 Details

@@ -7,7 +7,7 @@ const User = () => {
 
   return (
     <Box position={"absolute"} left={10} top={3}>
-      <Link href={`http://localhost:3000/users/${user?.id}`}>
+      <Link href={`${process.env.REACT_APP_API_URL}:3000/users/${user?.id}`}>
         <HStack py={2} alignItems={"center"}>
           <Avatar size={"sm"} name={user?.username} />
           <Box fontWeight={"bold"}>{user?.username}</Box>
