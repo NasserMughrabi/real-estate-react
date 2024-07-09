@@ -16,6 +16,7 @@ jobs:
     - name: Install Docker
       run: |
         brew install docker
+        brew install docker-machine-driver-vultr
         brew install docker-machine-driver-hyperkit
         docker --version
 
