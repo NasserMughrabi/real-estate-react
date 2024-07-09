@@ -1,7 +1,7 @@
 import { VStack } from "@chakra-ui/react";
 import ListingModal from "../components/listings/ListingModal";
 import Listings from "../components/listings/Listings";
-import EC2 from "../components/common/EC2";
+// import EC2 from "../components/common/EC2";
 
 const Home = () => {
   
