@@ -69,11 +69,10 @@ const EC2 = () => {
       // Start project docker-compose on ec2
       await executeCommandOnEC2();
 
-      // Terminate the instance after 10 minutes (600000 ms)
+      // Terminate the instance after 5 minutes (300000 ms)
       setTimeout(async () => {
-        // console.log("EC2 Instance terminated:", stopData);
         await terminateEC2();
-      }, 600000);
+      }, 300000);
     } catch (error) {
       console.error("Error launching EC2 Instance:", error);
     }
@@ -182,7 +181,7 @@ const EC2 = () => {
         setRemainingTime((prevTime) => prevTime - 1);
       }, 1000);
     } else {
-      setRemainingTime(600); // Reset remaining time when instance is stopped
+      setRemainingTime(300); // Reset remaining time when instance is stopped
     }
     return () => clearInterval(timer);
   }, [webStatus]);
