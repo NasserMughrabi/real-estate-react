@@ -47,12 +47,12 @@ const EC2 = () => {
 
     try {
       await ec2Client.send(startCommand);
-      setEC2Status("EC2 is starting");
+      setEC2Status("EC2 is launching");
       toast({
-        title: "EC2 Instance starting",
+        title: "EC2 Instance launching",
         description: "Please allow 1-3 minutes for it to start!",
         status: "success",
-        duration: 10000,
+        duration: 5000,
         isClosable: true,
         position: "top",
       });
@@ -64,7 +64,7 @@ const EC2 = () => {
 
       await waitForInstanceRunning();
       setEC2Status("EC2 is running");
-      setWebStatus("Website is starting");
+      setWebStatus("Website is launching");
 
       // Start project docker-compose on ec2
       await executeCommandOnEC2();
@@ -75,7 +75,7 @@ const EC2 = () => {
         await terminateEC2();
       }, 600000);
     } catch (error) {
-      console.error("Error starting EC2 Instance:", error);
+      console.error("Error launching EC2 Instance:", error);
     }
   };
 
