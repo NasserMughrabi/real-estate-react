@@ -19,7 +19,7 @@ const Signin = () => {
   const toast = useToast();
   const navigate = useNavigate();
   const [username, setUsername] = useState("");
-  const {user, setUser} = useContext(UserContext);
+  const { setUser } = useContext(UserContext);
 
   const handleSignin = async () => {
     if (username === "") {
@@ -68,7 +68,10 @@ const Signin = () => {
         // create new user
         try {
           const newUser = await createUser(userData);
-          localStorage.setItem("userToken", newUser?.username + " " + newUser?.id);
+          localStorage.setItem(
+            "userToken",
+            newUser?.username + " " + newUser?.id
+          );
           setUser(newUser);
           navigate("/home");
         } catch (error) {
