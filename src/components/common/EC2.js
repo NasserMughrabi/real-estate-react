@@ -24,7 +24,7 @@ const EC2 = () => {
   const [EC2Status, setEC2Status] = useState("stopped");
   const [webStatus, setWebStatus] = useState("stopped");
   const [AWSWeb, setAWSWeb] = useState("");
-  const [remainingTime, setRemainingTime] = useState(600); // 600 seconds = 10 minutes
+  const [remainingTime, setRemainingTime] = useState(600); // 600 seconds=10 minutes
 
   const EC2InstanceId = process.env.REACT_APP_EC2_ID;
 
