@@ -42,5 +42,5 @@ jobs:
           sudo systemctl start docker
           sudo systemctl enable docker
           docker pull ${{ secrets.DOCKER_USERNAME }}/real-estate-react:latest
-          docker-compose -f /home/ec2-user/realestate-fullstack/docker-compose.yml up -d web --no-build
+          docker-compose -f /home/ec2-user/realestate-fullstack/docker-compose.yml up -d --no-build
         EOF
