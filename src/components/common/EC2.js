@@ -6,7 +6,6 @@ import {
   Link,
   HStack,
   Text,
-  useToast,
   Spinner,
   Icon,
 } from "@chakra-ui/react";
@@ -26,7 +25,6 @@ const EC2 = () => {
   const [webStatus, setWebStatus] = useState("stopped");
   const [AWSWeb, setAWSWeb] = useState("");
   const [remainingTime, setRemainingTime] = useState(600); // 600 seconds = 10 minutes
-  const toast = useToast();
 
   const EC2InstanceId = process.env.REACT_APP_EC2_ID;
 
