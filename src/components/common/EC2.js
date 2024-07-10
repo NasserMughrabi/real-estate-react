@@ -48,14 +48,6 @@ const EC2 = () => {
       setEC2Status("starting");
 
       //   console.log("EC2 Instance started:", startData);
-      toast({
-        title: "EC2 Instance starting",
-        description: "Please allow 1-3 minutes for it to start!",
-        status: "success",
-        duration: 10000,
-        isClosable: true,
-        position: "top",
-      });
 
       //   Check instance state and wait for it to start
       //   let instanceState = "pending";
@@ -147,17 +139,17 @@ const EC2 = () => {
       await new Promise((resolve) => setTimeout(resolve, 5000));
 
       // Check command status
-      const params = {
-        CommandId: commandResult.Command.CommandId,
-        InstanceId: EC2InstanceId,
-      };
+      //   const params = {
+      //     CommandId: commandResult.Command.CommandId,
+      //     InstanceId: EC2InstanceId,
+      //   };
 
-      let result = "pending";
-      while (result.toLowerCase() !== "success") {
-        const invo = await ssm.getCommandInvocation(params).promise();
-        result = invo.Status;
-        // console.log("Command invocation result:", result);
-      }
+      //   let result = "pending";
+      //   while (result.toLowerCase() !== "success") {
+      //     const invo = await ssm.getCommandInvocation(params).promise();
+      //     result = invo.Status;
+      //     // console.log("Command invocation result:", result);
+      //   }
 
       setWebStatus("running");
     } catch (error) {
