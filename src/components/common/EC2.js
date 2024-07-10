@@ -9,6 +9,7 @@ import {
   Spinner,
   Icon,
   VStack,
+  useToast,
 } from "@chakra-ui/react";
 import {
   EC2Client,
@@ -27,6 +28,7 @@ const EC2 = () => {
   const [webStatus, setWebStatus] = useState("Website is stopped");
   const [AWSWeb, setAWSWeb] = useState("");
   const [remainingTime, setRemainingTime] = useState(600); // 600 seconds=10 minutes
+  const toast = useToast();
 
   const EC2InstanceId = process.env.REACT_APP_EC2_ID;
 
@@ -46,17 +48,19 @@ const EC2 = () => {
     try {
       await ec2Client.send(startCommand);
       setEC2Status("EC2 is starting");
+      toast({
+        title: "EC2 Instance starting",
+        description: "Please allow 1-3 minutes for it to start!",
+        status: "success",
+        duration: 10000,
+        isClosable: true,
+        position: "top",
+      });
 
       // Get instance public IP after starting
       const instanceIp = await getInstancePublicIp(EC2InstanceId);
 
       setAWSWeb(`http://${instanceIp}:3000`);
-
-      // Wait for 20 seconds
-      //   await new Promise((resolve) => setTimeout(resolve, 10000));
-      //   setEC2Status("EC2 is initializing");
-      //   await new Promise((resolve) => setTimeout(resolve, 10000));
-      //   await new Promise((resolve) => setTimeout(resolve, 20000));
 
       await waitForInstanceRunning();
       setEC2Status("EC2 is running");
@@ -98,7 +102,6 @@ const EC2 = () => {
           )
           .then((data) => data.InstanceStatuses[0]);
 
-        console.log(instanceStatus);
         if (instanceStatus) {
           const instanceState = instanceStatus.InstanceState.Name;
           const systemStatus = instanceStatus.SystemStatus.Status;
