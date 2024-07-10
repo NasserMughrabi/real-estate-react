@@ -58,14 +58,14 @@ const EC2 = () => {
 
       // Get instance public IP after starting
       const instanceIp = await getInstancePublicIp(EC2InstanceId);
-      setEC2Status("running");
 
       setAWSWeb(`http://${instanceIp}:3000`);
 
-      setWebStatus("starting");
-
       // Wait for 5 seconds
-      await new Promise((resolve) => setTimeout(resolve, 20000));
+      await new Promise((resolve) => setTimeout(resolve, 10000));
+      setEC2Status("running");
+      await new Promise((resolve) => setTimeout(resolve, 10000));
+      setWebStatus("starting");
 
       // Start project docker-compose on ec2
       await executeCommandOnEC2();
