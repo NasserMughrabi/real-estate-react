@@ -64,8 +64,8 @@ const EC2 = () => {
       // Wait for 5 seconds
       await new Promise((resolve) => setTimeout(resolve, 10000));
       setEC2Status("running");
-      await new Promise((resolve) => setTimeout(resolve, 10000));
       setWebStatus("starting");
+      await new Promise((resolve) => setTimeout(resolve, 10000));
 
       // Start project docker-compose on ec2
       await executeCommandOnEC2();
