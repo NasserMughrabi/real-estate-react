@@ -38,9 +38,6 @@ const EC2 = () => {
     },
   });
 
-  console.log(process.env.REACT_APP_AWS_ACCESS_KEY_ID);
-  console.log(process.env.REACT_APP_AWS_SECRET_ACCESS_KEY);
-
   const startEC2Instance = async () => {
     const startCommand = new StartInstancesCommand({
       InstanceIds: [EC2InstanceId],
